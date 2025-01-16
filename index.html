@@ -4,23 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Excel Form</title>
+    <title>Upload File to Google Drive</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        input[type="file"] {
+            display: block;
+            margin: 10px auto;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
 
 <body>
-    <h2>Enter Data to Save in Excel</h2>
-    <form action="save_excel.php" method="post">
-        <label>Name:</label>
-        <input type="text" name="name" required><br><br>
-
-        <label>Email:</label>
-        <input type="email" name="email" required><br><br>
-
-        <label>Phone:</label>
-        <input type="text" name="phone" required><br><br>
-
-        <button type="submit">Save to Excel</button>
-    </form>
+    <div class="container">
+        <h2>Upload Any File</h2>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
 </body>
 
 </html>
